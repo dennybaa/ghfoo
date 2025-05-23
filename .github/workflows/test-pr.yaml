@@ -1,0 +1,21 @@
+name: test-pr
+
+on:
+  workflow_dispatch:
+    inputs:
+      featue:
+        description: Feature
+        required: false
+        type: string
+
+      client-id:
+        description: Client ID
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "$GITHUB_REPOSITORY prenv deployed!"
