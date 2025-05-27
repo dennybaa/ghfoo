@@ -3,12 +3,12 @@ name: test-pr
 on:
   workflow_dispatch:
     inputs:
-      featue:
+      feature:
         description: Feature
         required: false
         type: string
 
-      client-id:
+      client:
         description: Client ID
         required: false
         type: string
@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "$GITHUB_REPOSITORY prenv deployed!"
+          echo '${{ inputs | toJSON }}'
