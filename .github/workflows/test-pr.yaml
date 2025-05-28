@@ -19,3 +19,5 @@ jobs:
     steps:
       - run: |
           echo '${{ toJSON(inputs) }}'
+          echo '--------'
+          env
