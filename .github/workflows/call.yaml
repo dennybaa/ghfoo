@@ -1,0 +1,16 @@
+name: on-call
+
+on:
+  workflow_call:
+    inputs:
+      boo:
+        description: Feature
+        required: false
+        type: boolean
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo '${{ inputs.boo }}'

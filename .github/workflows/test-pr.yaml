@@ -1,21 +1,10 @@
 name: test-pr
 
 on:
-  workflow_dispatch:
-    inputs:
-      feature:
-        description: Feature
-        required: false
-        type: string
-
-      client:
-        description: Client ID
-        required: false
-        type: string
+  pull_request:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo '${{ toJSON(inputs) }}'
+  do:
+    uses: ./.github/workflows/call.yaml
+    with:
+      boo: true
