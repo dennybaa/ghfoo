@@ -7,4 +7,4 @@ jobs:
   do:
     uses: ./.github/workflows/call.yaml
     with:
-      boo: 'true'
+      boo: true
